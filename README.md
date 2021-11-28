@@ -1,2 +1,2 @@
 # DebyeSheath
-This repo reprpduces the results presented in <i>DebyeSheath.pdf</i>
+This repo accompanies <i>DebyeSheath.pdf</i> and presents the code to reproduce the presented results. 
