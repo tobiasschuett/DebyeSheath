@@ -63,7 +63,7 @@ def rho(vs,vi,phi):
 def truncate(x,y):
 	x2, y2 = [],[]
 	for l,m in zip(x,y):
-		if l <= 0.2:
+		if l <= 0:
 			x2.append(l)
 			y2.append(m)
 	return x2,y2
@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
 	phi0, E0, vi0 = 0, 0.001, 1 #vi0 = vs = 1
 	initialState = [phi0,E0,vi0] #values at sheath-plasma boundary
-	x = np.linspace(0,40,100)
+	x = np.linspace(0,40,1000)
 	L = [0.1,1,10,100,1e3,1e4,"infinity-numerical","infinity-analytical"]
 
 	xshifts, viwall = np.zeros(len(L)), np.zeros(len(L))
@@ -152,7 +152,7 @@ if __name__ == "__main__":
 	plt.text(0.5,1.5,"Material",fontsize=20)
 	plt.grid(ls="--",alpha=0.8)
 	plt.xlim(-6,2)
-	plt.ylim(0,3)
+	plt.ylim(0,4.5)
 	plt.xlabel(r"normalized distance from material surface x $[\lambda_D=\sqrt{\frac{\epsilon_0 T_e}{e n_s}}]$",fontsize=16)
 	plt.ylabel(r"charge density $\rho$ $[n_s]$",fontsize=16)
 	plt.legend(loc="upper left",fontsize=16)
